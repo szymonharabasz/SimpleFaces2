@@ -4,7 +4,6 @@ import javax.enterprise.context.RequestScoped
 import javax.faces.annotation.FacesConfig
 import javax.inject.Named
 import javax.faces.annotation.FacesConfig.Version.JSF_2_3
-import javax.faces.bean.ManagedBean
 
 @Named(value = "user")
 @RequestScoped
