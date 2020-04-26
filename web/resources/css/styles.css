@@ -8,5 +8,12 @@
 
 .errorMsg {
     color: darkred;
+    background-color: pink;
+    font-weight: bolder;
+}
+
+.infoMsg {
+    color: darkgreen;
+    background-color: lightgreen;
     font-weight: bolder;
 }

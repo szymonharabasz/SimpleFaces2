@@ -34,13 +34,13 @@
             <f:validator  validatorId="emailValidator"/>
          </h:inputText>
          <h:panelGroup/>
-         <h:commandButton action="confirmation" value="Save"/>
+         <h:commandButton action="#{userController.saveData()}" value="Save"/>
       </h:panelGrid>
    </h:form>
    <h:form id="gotoForm">
    <h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">
-   <h:panelGroup/>
-   <h:commandButton action="ajaxdemo" value="Go to Ajax Demo"/>
+      <h:commandButton action="ajaxdemo" value="Go to Ajax Demo"/>
+      <h:commandButton action="chat" value="Open Chat"/>
    </h:panelGrid>
    </h:form>
 

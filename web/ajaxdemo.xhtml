@@ -4,14 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
     <title>JSF Ajax Demo</title>
 </h:head>
 <h:body>
     <h2>JSF Ajax Demo</h2>
-    <h:form>
+    <h:form p:autocomplete="off">
         <h:messages/>
+        <h:inputText p:autocomplete="false" p:name="hidden" style="display: none;"/>
         <h:panelGrid columns="2">
             <h:outputText value="Echo input:"/>
             <h:inputText id="textInput" value="#{controller.text}">
@@ -24,14 +26,15 @@
         <hr/>
         <h:panelGrid columns="2">
             <h:outputText value="First operand:"/>
-            <h:inputText id="first" value="#{controller.firstOperand}" size="3"/>
+            <h:inputText id="first" value="#{controller.firstOperand}" size="3">
+                <f:ajax execute="second sum" listener="#{controller.calculateTotal}" render="sum" event="keyup"/>
+            </h:inputText>
             <h:outputText value="Second operand:"/>
-            <h:inputText id="second" value="#{controller.secondOperand}" size="3"/>
+            <h:inputText id="second" value="#{controller.secondOperand}" size="3">
+                <f:ajax execute="first sum" listener="#{controller.calculateTotal}" render="sum" event="keyup"/>
+            </h:inputText>
             <h:outputText value="Total:"/>
             <h:outputText id="sum" value="#{controller.total}"/>
-            <h:commandButton actionListener="#{controller.calculateTotal}" value="Calculate Sum">
-                <f:ajax execute="first second" render="sum"/>
-            </h:commandButton>
 
         </h:panelGrid>
     </h:form>
