@@ -1,11 +1,12 @@
 .leftAlign {
-    alignment: left;
+    text-align: left;
 }
 
 .rightAlign {
-    alignment: right;
+    text-align: right;
 }
 
 .errorMsg {
     color: darkred;
+    font-weight: bolder;
 }
