@@ -11,8 +11,9 @@
    <title>Enter customer data</title>
 </h:head>
 <h:body>
+   <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
    <h:form id="customerForm">
-      <h:messages></h:messages>
+      <h:messages styleClass="errorMsg"></h:messages>
       <h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">
          <h:outputLabel for="firstName" value="First Name:"></h:outputLabel>
          <h:inputText id="firstName" label="First Name" value="#{user.firstName}"
@@ -32,6 +33,13 @@
          <h:commandButton action="confirmation" value="Save"></h:commandButton>
       </h:panelGrid>
    </h:form>
+   <h:form id="gotoForm">
+   <h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">
+   <h:panelGroup></h:panelGroup>
+   <h:commandButton action="ajaxdemo" value="Go to Ajax Demo"></h:commandButton>
+   </h:panelGrid>
+   </h:form>
+
 </h:body>
 </f:view>
 </html>

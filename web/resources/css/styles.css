@@ -1,0 +1,11 @@
+.leftAlign {
+    alignment: left;
+}
+
+.rightAlign {
+    alignment: right;
+}
+
+.errorMsg {
+    color: darkred;
+}
