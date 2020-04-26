@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
 <f:view>
 <h:head>
@@ -17,16 +18,19 @@
       <h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">
          <h:outputLabel for="firstName" value="First Name:"/>
          <h:inputText id="firstName" label="First Name" value="#{user.firstName}"
-                      required="true" validator="#{alphaValidator.validateAlpha}">
+                      required="true" validator="#{alphaValidator.validateAlpha}"
+                      p:placeholder="First Name">
             <f:validateLength minimum="2" maximum="30"/>
          </h:inputText>
          <h:outputLabel for="lastName" value="Last Name:"/>
          <h:inputText id="lastName" label="Last Name" value="#{user.lastName}"
-                      required="true" validator="#{alphaValidator.validateAlpha}">
+                      required="true" validator="#{alphaValidator.validateAlpha}"
+                      p:placeholder="Last Name">
             <f:validateLength minimum="2" maximum="30"/>
          </h:inputText>
          <h:outputLabel for="email" value="Email:"/>
-         <h:inputText id="email" label="Email" value="#{user.email}" required="true">
+         <h:inputText id="email" label="Email" value="#{user.email}" required="true"
+                      p:placeholder="Email">
             <f:validator  validatorId="emailValidator"/>
          </h:inputText>
          <h:panelGroup/>
